@@ -1,6 +1,4 @@
-# fantasy-football-simulation
-
-# Monte Carlo Playoff Probability Engine
+# Monte Carlo Fantasy Football Playoff Probability Engine
 
 > A probabilistic simulation engine that computes playoff odds using real matchup win probabilities and large-scale Monte Carlo simulation.
 
