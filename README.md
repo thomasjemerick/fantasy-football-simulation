@@ -1,29 +1,44 @@
 # fantasy-football-simulation
 
-Monte Carlo Playoff Probability Engine
+# Monte Carlo Playoff Probability Engine
 
-A probabilistic simulation engine that computes playoff probabilities using real game win probabilities and Monte Carlo methods, with interactive scenario analysis and optimal rooting guidance.
+> A probabilistic simulation engine that computes playoff odds using real matchup win probabilities and large-scale Monte Carlo simulation.
 
-This system models thousands of possible season outcomes using actual matchup win probabilities, allowing precise estimation of playoff odds and identification of the game outcomes that most affect a team’s chances.
+**What it does:** simulates thousands of possible season outcomes to estimate playoff probabilities, quantify game-by-game leverage, and generate an **optimal rooting guide** for any selected team.
 
-Designed as a general framework for sports analytics, decision analysis, and probabilistic forecasting.
+---
 
-Key Capabilities
+## ✨ Highlights
 
-Real probabilistic modeling
-Uses game-level win probabilities to simulate realistic season outcomes.
+- **Real win probabilities → realistic simulations** (not coin flips)
+- **Monte Carlo playoff odds** with configurable simulation count + tiebreak rules
+- **“Fan Guide” / Rooting Guide**: pick a team and get **who to root for** in every remaining game
+- **Counterfactual scenarios**: force winners and instantly recalculate playoff odds
+- **Interactive dashboard** built with **Streamlit**
 
-Monte Carlo simulation engine
-Runs thousands of simulated seasons to estimate playoff probabilities with statistical convergence.
+---
 
-Team-specific playoff analysis ("Fan Guide")
-User selects any team, and the system computes which game outcomes most improve that team’s playoff chances, effectively generating an optimal rooting strategy.
+## 🧠 What this answers
 
-Scenario override and counterfactual analysis
-Users can force specific game outcomes and immediately recalculate playoff probabilities to measure impact.
+- **What is each team’s probability of making the playoffs?**
+- **Which remaining games matter most for Team X?**
+- **Who should Team X’s fans root for?**
+- **How much does one game swing playoff probability?**
+- **What’s the best-case path to the playoffs?**
 
-Decision sensitivity analysis
-Quantifies how each remaining game affects playoff probability, identifying high-leverage matchups.
+---
 
-Interactive dashboard
-Streamlit interface allows real-time simulation, parameter adjustment, and scenario exploration.
+## 🔬 Methodology (Monte Carlo)
+
+For each simulation:
+
+1. Initialize current standings  
+2. Simulate remaining games using win probabilities  
+3. Compute final standings  
+4. Select playoff teams based on league settings  
+
+After **N** simulations, playoff probability is estimated empirically:
+
+**Playoff Probability(team) = (# simulations team makes playoffs) / N**
+
+This is the same core approach used in **sports forecasting**, **risk modeling**, and **quantitative Monte Carlo systems**.
